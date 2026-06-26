@@ -2,49 +2,34 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Prasad",
+  lastName: "Chavan",
+  name: `Prasad Chavan`,
+  role: "Mechanical Design Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
-  locale: "en", // BCP 47 language tag for the HTML lang attribute, e.g., 'en', 'ja', 'zh-TW'
+  email: "prasad2004.sci@gmail.com",
+  location: "Asia/Kolkata", // IANA time zone identifier
+  languages: ["English", "Hindi", "Marathi"],
+  locale: "en",
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>Occasional notes on mechanical design and engineering projects</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/murmattijayesh/portfolio-prasad",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/prasad-chavan-696a913b8/",
     essential: true,
   },
   {
@@ -59,26 +44,28 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `${person.name} – Mechanical Design Engineer`,
+  description: `Portfolio of ${person.name}, a mechanical design engineer specialising in CAD modelling, R&D and production-ready engineering`,
+  headline: <>From concept to manufacturing-ready design</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Industrial Boiler System</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Featured project
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/industrial-boiler-system",
   },
   subline: (
     <>
-      I'm {person.firstName}, a {person.role.toLowerCase()} at{" "}
-      <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+      I'm Prasad, a final-year mechanical engineer and{" "}
+      <Text as="span" size="xl" weight="strong">R&amp;D Design Intern at Aeron Systems</Text>.
+      I turn ideas into detailed 3D models, manufacturing drawings and
+      production-ready assemblies using SolidWorks and ANSYS.
     </>
   ),
 };
@@ -87,220 +74,76 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, a ${person.role} based in Pune, India`,
   tableOfContent: {
     display: true,
     subItems: false,
   },
   avatar: {
-    display: true,
+    display: false, // set true after adding your photo at /public/images/avatar.jpg
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "mailto:prasad2004.sci@gmail.com",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        {person.firstName} is a {person.location.split("/")[1]?.replace("_", " ")}-based {person.role.toLowerCase()} with a passion for transforming complex challenges
-        into simple, elegant design solutions. Their work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Prasad is a Pune-based mechanical design engineer in the final year of his
+        B.E. in Mechanical Engineering. He specialises in CAD modelling, assembly
+        design and detailed manufacturing documentation, with hands-on R&amp;D
+        experience across industrial plant equipment, automotive systems and
+        product design. His current focus is an Acoustic Vehicle Alerting System
+        (AVAS) for pedestrian safety, the subject of his final-year thesis and a
+        submitted review paper.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Aeron Systems",
+        timeframe: "Feb 2026 – Jul 2026",
+        role: "R&D Design Intern",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Created SolidWorks assemblies, detailed part drawings and step-by-step
+            assembly instruction drawings, with BOMs and engineering documentation
+            prepared to internal standards.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Applied GD&amp;T across detailed part drawings and managed multiple
+            assembly configurations for production readiness.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Developed VBA macros in SolidWorks to automate repetitive tasks such as
+            figure-label renumbering across multi-sheet drawings.
+          </>,
+          <>
+            Designed a prototype mount for automated cleaning of pyranometer and
+            albedometer lenses used in weather-monitoring systems.
           </>,
         ],
         images: [],
       },
-    ],
-  },
-  studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
-    institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
-      },
-    ],
-  },
-  technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
-    skills: [
-      {
-        title: "Figma",
-        description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-    ],
-  },
-};
-
-const blog: Blog = {
-  path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
-};
-
-const work: Work = {
-  path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
-};
-
-const gallery: Gallery = {
-  path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
-};
-
-export { person, social, newsletter, home, about, blog, work, gallery };
+        company: "SLAM Tech",
+        timeframe: "Jan 2025 – Feb 2025",
+        role: "Mechanical Design Intern",
+        achievements: [
+          <>
+            Participated in the full design and development of a boiler
+            manufacturing plant, from layout planning through to system integration.
+          </>,
+          <>
+            Handled mechanical design and detailing of boiler components, piping
+            layouts and auxiliary systems using CAD tools.
+          </>,
+          <>
+            Worked on plant layout, material-flow planning and equipment placement
+            to optimise manufacturing efficiency and safety.
+          </>,
