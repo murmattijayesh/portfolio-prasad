@@ -80,7 +80,7 @@ const about: About = {
     subItems: false,
   },
   avatar: {
-    display: false, // set true after adding your photo at /public/images/avatar.jpg
+    display: true,
   },
   calendar: {
     display: true,
