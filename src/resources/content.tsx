@@ -131,7 +131,7 @@ const about: About = {
         images: [],
       },
       {
-        company: "SLAM Tech",
+        company: "SGM Tech",
         timeframe: "Jan 2025 – Feb 2025",
         role: "Mechanical Design Intern",
         achievements: [
